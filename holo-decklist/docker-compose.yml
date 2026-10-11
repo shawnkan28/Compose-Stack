@@ -1,0 +1,11 @@
+services:
+  holo_ocg:
+    build: ./holo-decklist
+    ports:
+      - "8081:8081"
+    environment:
+      - PUBLIC_SITE_URL=shawn-rpi
+      - ORIGIN=http://shawn-rpi:8081
+    volumes:
+      - ./data/holo-decklist:/app/data
+    restart: "no"
